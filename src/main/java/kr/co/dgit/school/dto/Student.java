@@ -1,28 +1,31 @@
 package kr.co.dgit.school.dto;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import com.mysql.fabric.xmlrpc.base.Data;
 
 public class Student {
 	private int studId;
 	private String name;
 	private String email;
 	private Date dob;
+	private PhoneNumber phone;
 	
 	public Student() {
 		
-	}
+	}	
 	
-	
-	public Student(int studId, String name, String email, Date dob) {
+
+
+	public Student(int studId, String name, String email, Date dob, PhoneNumber phone) {
 		super();
 		this.studId = studId;
 		this.name = name;
 		this.email = email;
 		this.dob = dob;
+		this.phone = phone;
 	}
+
+
+
 
 
 	public int getStudId() {
@@ -58,9 +61,24 @@ public class Student {
 	}
 
 
+	
+
+
+	public PhoneNumber getPhone() {
+		return phone;
+	}
+
+
+	public void setPhone(PhoneNumber phone) {
+		this.phone = phone;
+	}
+
+	
+
 	@Override
 	public String toString() {
-		return "Student [studId=" + studId + ", name=" + name + ", email=" + email + ", dob=" + dob + "]";
+		return String.format("Student [studId=%s, name=%s, email=%s, dob=%s, phone=%s]", studId, name, email, dob,
+				phone);
 	}
 
 
@@ -71,6 +89,7 @@ public class Student {
 		result = prime * result + ((dob == null) ? 0 : dob.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
 		result = prime * result + studId;
 		return result;
 	}
@@ -100,10 +119,16 @@ public class Student {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (phone == null) {
+			if (other.phone != null)
+				return false;
+		} else if (!phone.equals(other.phone))
+			return false;
 		if (studId != other.studId)
 			return false;
 		return true;
 	}
+
 
 
 	
