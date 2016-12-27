@@ -49,14 +49,15 @@ public class StudentServiceTest {
 	
 	/*@Test
 	public void testDeleteItem() { 
-		studentService.deleteItem(2);
+		studentService.deleteItem(4);
 		
-		Student std = studentService.selectByNo(2);
+		Student std = studentService.selectByNo(4);
 		
 		Assert.assertNull(std);
-	}*/
+	}
 	
-	/*@Test
+
+	@Test
 	public void testInsertItem() {
 		Calendar cal = Calendar.getInstance();
 		cal.set(2000, 01, 01);
@@ -66,13 +67,13 @@ public class StudentServiceTest {
 		List<Student> list = studentService.findAllStudent();
 		
 		Assert.assertEquals(4, list.size());
-	}
+		}
 	@Test
 	public void testUpdateItem() {
 		Calendar cal = Calendar.getInstance();
 		cal.clear();
 		cal.set(2000, 01, 01);
-		Student upStd = new Student(5, "이유진", "lyj@test.co.kr", cal.getTime(), new PhoneNumber("010-1234-1234")); 
+		Student upStd = new Student(5, "이유진", "lyj@test.co.kr", cal.getTime(), new PhoneNumber("010-6544-6544")); 
 		studentService.updateItem(upStd);
 		
 		Student std = studentService.selectByNo(5);
