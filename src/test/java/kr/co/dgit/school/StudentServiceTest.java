@@ -66,16 +66,16 @@ public class StudentServiceTest {
 		List<Student> list = studentService.findAllStudent();
 		
 		Assert.assertEquals(4, list.size());
-	}*/
+	}
 	@Test
 	public void testUpdateItem() {
 		Calendar cal = Calendar.getInstance();
 		cal.clear();
 		cal.set(2000, 01, 01);
-		Student upStd = new Student(4, "이유진", "lyj@test.co.kr", cal.getTime(), new PhoneNumber("010-1234-1234")); 
+		Student upStd = new Student(5, "이유진", "lyj@test.co.kr", cal.getTime(), new PhoneNumber("010-1234-1234")); 
 		studentService.updateItem(upStd);
 		
-		Student std = studentService.selectByNo(4);
+		Student std = studentService.selectByNo(5);
 		Assert.assertEquals(std, upStd);
-	}
+	}*/
 }
